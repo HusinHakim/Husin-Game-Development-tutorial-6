@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://di26q00bqfxq4"]
+
+[ext_resource type="FontFile" uid="uid://bpaegc6lsovqt" path="res://assets/Fonts/CC Wild Words Roman.ttf" id="1_vlb8f"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="2_gameover"]
+
+[node name="GameOver" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6451949, 0, 0.01625515, 1)
+script = ExtResource("2_gameover")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -110.0
+offset_right = 320.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vlb8f")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+text = "GAME OVER"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 20
+
+[node name="TryAgainButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vlb8f")
+theme_override_font_sizes/font_size = 36
+text = "Try Again"
+
+[node name="BackButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vlb8f")
+theme_override_font_sizes/font_size = 36
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/TryAgainButton" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_pressed"]

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c52pbgjhvqon"]
+
+[ext_resource type="Script" path="res://scripts/hearts.gd" id="1_hearts"]
+[ext_resource type="Texture2D" path="res://assets/kenney_platformerpack/PNG/HUD/hudHeart_full.png" id="2_full"]
+[ext_resource type="Texture2D" path="res://assets/kenney_platformerpack/PNG/HUD/hudHeart_empty.png" id="3_empty"]
+
+[node name="LifeCounter" type="MarginContainer"]
+offset_right = 168.0
+offset_bottom = 56.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+script = ExtResource("1_hearts")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heart1" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("2_full")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart2" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("2_full")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart3" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("2_full")
+expand_mode = 1
+stretch_mode = 5

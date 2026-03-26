@@ -1,27 +1,32 @@
-[gd_scene load_steps=5 format=4 uid="uid://djhjj82du0q1c"]
+[gd_scene format=4 uid="uid://djhjj82du0q1c"]
 
 [ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://tpq0ge2lruix" path="res://assets/Familiar Looking Rocket.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://bls6pqt8flug3" path="res://scenes/tile_map.tscn" id="3_ucxpt"]
 [ext_resource type="PackedScene" uid="uid://bul5fybv2rytg" path="res://scenes/Area Trigger.tscn" id="4_l54f5"]
+[ext_resource type="PackedScene" uid="uid://c52pbgjhvqon" path="res://scenes/Life Counter.tscn" id="5_hud"]
 
-[node name="Level 2" type="Node2D"]
+[node name="Level 2" type="Node2D" unique_id=972900070]
 
-[node name="Player" parent="." instance=ExtResource("1")]
+[node name="Player" parent="." unique_id=2108334923 instance=ExtResource("1")]
 position = Vector2(306.864, 1732.87)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1489.02, 845.752)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=379774935]
+position = Vector2(1526, 717)
 texture = ExtResource("3")
 
-[node name="TileMap" parent="." instance=ExtResource("3_ucxpt")]
+[node name="TileMap" parent="." unique_id=409843641 instance=ExtResource("3_ucxpt")]
 tile_map_data = PackedByteArray("AAADAB0AAAAAAAAAAAAEAB0AAAAAAAAAAAAFAB0AAAAAAAAAAAAGAB0AAAAAAAAAAAAHAB0AAAAAAAAAAAAIAB0AAAAAAAAAAAAJABwAAAAAAAAAAAAKABwAAAAAAAAAAAALABwAAAAAAAAAAAALABsAAAAAAAAAAAAMABsAAAAAAAAAAAANABsAAAAAAAAAAAAOABoAAAAAAAAAAAAPABoAAAAAAAAAAAAQABoAAAAAAAAAAAAQABkAAAAAAAAAAAARABkAAAAAAAAAAAARABgAAAAAAAAAAAASABgAAAAAAAAAAAATABcAAAAAAAAAAAAUABYAAAAAAAAAAAAVABUAAAAAAAAAAAAXABMAAAAAAAAAAAAXABIAAAAAAAAAAAAYABEAAAAAAAAAAAAZABEAAAAAAAAAAAAXABEAAAAAAAAAAAAXABAAAAAAAAAAAAAYABAAAAAAAAAAAAAZABAAAAAAAAAAAAAaABAAAAAAAAAAAAAPABIAAAAAAAAAAAAQABIAAAAAAAAAAAARABIAAAAAAAAAAAASABIAAAAAAAAAAAAPABEAAAAAAAAAAAAQABEAAAAAAAAAAAARABEAAAAAAAAAAAAPABAAAAAAAAAAAAAOABAAAAAAAAAAAAANABAAAAAAAAAAAAATAA8AAAAAAAAAAAAUAA8AAAAAAAAAAAAVAA8AAAAAAAAAAAAWAA8AAAAAAAAAAAAXAA8AAAAAAAAAAAAWABQAAAAAAAAAAAATABMAAAAAAAEAAAAUABMAAAAAAAEAAAA=")
 
-[node name="win_trigger" parent="." instance=ExtResource("4_l54f5")]
+[node name="win_trigger" parent="." unique_id=350921731 instance=ExtResource("4_l54f5")]
 position = Vector2(1586, 721)
 sceneName = "Win Screen"
 
-[node name="death_trigger" parent="." instance=ExtResource("4_l54f5")]
+[node name="death_trigger" parent="." unique_id=1942767957 instance=ExtResource("4_l54f5")]
 position = Vector2(420, 2439)
 scale = Vector2(10.56, 1)
 sceneName = "Level 2"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=200000001]
+
+[node name="MarginContainer" parent="CanvasLayer" unique_id=200000002 instance=ExtResource("5_hud")]

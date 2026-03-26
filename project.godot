@@ -15,9 +15,14 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="tutorial-6"
-run/main_scene="res://scenes/Level 1.tscn"
+run/main_scene="res://scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*uid://b1dyj17e3u46t"
+SceneTransition="*res://scripts/SceneTransition.gd"
 
 [input]
 
